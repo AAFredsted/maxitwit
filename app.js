@@ -56,12 +56,12 @@ app.use(session({
 }));  
 
 // Catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404)); // If no middleware has responded by now, it means a 404 error should be generated and forwarded to the error handler
 });
 
 // Error handler middleware
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // Set locals, providing error details only in development environment
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

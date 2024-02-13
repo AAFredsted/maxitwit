@@ -2,7 +2,21 @@ extends layout
 
 block content
   h2= title
-  ul.messages
-    li
-      em There's no message so far.
-
+  block body
+    ul.messages 
+      each message in messages
+        div.twitbox
+          li.message-item
+            img(src=message.gravatar)
+            div
+              span
+                strong
+                  a(href="/"+message.username) #{message.username}
+              | 
+              span #{message.text}
+              |
+              span 
+                small &mdash; #{message.pub_date}
+      else
+        ul.messages
+            em There's no message so far.
