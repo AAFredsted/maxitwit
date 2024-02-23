@@ -31,6 +31,7 @@ const registerRouter = require('./routes/register') // Router for register relat
 const timelineRouter = require('./routes/timeline') // Router for public timeline related paths
 const apiRouter = require('./routes/api') // Router for public timeline related paths
 
+
 // Initialize the Express application
 const app = express()
 
@@ -74,6 +75,7 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
   console.log(process.env.NODE_ENV)
+
 
   // Render the error page, setting the status code
   res.status(err.status || 500)
